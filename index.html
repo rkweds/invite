@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>शुभविवाह — राकेश & कोमल | Wedding Invitation</title>
+  <meta name="description"
+    content="You are cordially invited to the auspicious wedding of Rakesh & Komal. Join us in celebrating this divine union blessed by Lord Ganesha.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Serif+Devanagari:wght@400;500;600;700;900&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --maroon: #6B1A1A;
+      --maroon-deep: #4A0E0E;
+      --gold: #C9933A;
+      --gold-light: #E8C477;
+      --gold-bright: #FFD700;
+      --ivory: #FDF6EC;
+      --ivory-dark: #F5ECD7;
+      --saffron: #FF8C00;
+      --rose: #E8A0A0;
+      --cream: #FFF8F0;
+      --font-en: 'Cinzel', 'Playfair Display', serif;
+      --font-hi: 'Noto Serif Devanagari', 'Tiro Devanagari Hindi', serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-hi);
+      background-color: var(--ivory);
+      background-image: url('mandala-bg.png');
+      background-size: 500px;
+      background-repeat: repeat;
+      color: var(--maroon);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    /* Floating petals */
+    .petal-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -60px;
+      opacity: 0.7;
+      animation: petalFall linear infinite;
+      font-size: 1.5rem;
+    }
+
+    @keyframes petalFall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg) translateX(0);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: translateY(50vh) rotate(180deg) translateX(30px);
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(360deg) translateX(-20px);
+        opacity: 0;
+      }
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Gold shimmer */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .gold-shimmer {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 25%, var(--gold) 50%, var(--gold-bright) 75%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+
+    /* Glow pulse */
+    @keyframes glowPulse {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 15px rgba(201, 147, 58, 0.4));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 35px rgba(201, 147, 58, 0.8)) drop-shadow(0 0 60px rgba(255, 215, 0, 0.3));
+      }
+    }
+
+    /* Decorative border */
+    .ornate-border {
+      border: 3px solid var(--gold);
+      border-image: repeating-linear-gradient(45deg, var(--gold), var(--gold) 5px, transparent 5px, transparent 10px, var(--maroon) 10px, var(--maroon) 15px, transparent 15px, transparent 20px) 8;
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .ornate-border::before,
+    .ornate-border::after {
+      content: '❧';
+      position: absolute;
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    .ornate-border::before {
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .ornate-border::after {
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%) rotate(180deg);
+    }
+
+    /* Section styling */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      position: relative;
+    }
+
+    .section-title {
+      font-family: var(--font-hi);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--maroon);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* Golden divider */
+    .lotus-divider {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .lotus-divider::before,
+    .lotus-divider::after {
+      content: '';
+      flex: 1;
+      max-width: 150px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      position: relative;
+      background: radial-gradient(ellipse at center, rgba(253, 246, 236, 0.95), rgba(253, 246, 236, 0.8));
+    }
+
+    .hero-ganesha {
+      width: min(240px, 55vw);
+      height: auto;
+      margin-bottom: 1rem;
+      animation: glowPulse 3s ease-in-out infinite;
+      border-radius: 50%;
+    }
+
+    .shloka {
+      font-family: var(--font-hi);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      color: var(--gold);
+      line-height: 2;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      max-width: 600px;
+      text-shadow: 0 0 20px rgba(201, 147, 58, 0.3);
+    }
+
+    .hero-title {
+      font-family: var(--font-hi);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-en);
+      font-size: clamp(0.85rem, 2vw, 1.2rem);
+      color: var(--maroon);
+      letter-spacing: 4px;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* Countdown */
+    .countdown-section {
+      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-family: var(--font-hi);
+      font-size: 1.2rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .countdown-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      min-width: 90px;
+      backdrop-filter: blur(5px);
+    }
+
+    .countdown-num {
+      font-family: var(--font-en);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      display: block;
+    }
+
+    .countdown-unit {
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Couple section */
+    .couple-section {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .monogram {
+      font-family: var(--font-en);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .person-card {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      padding: 2rem;
+      background: rgba(253, 246, 236, 0.7);
+      border-radius: 16px;
+      border: 2px solid rgba(201, 147, 58, 0.3);
+      backdrop-filter: blur(5px);
+    }
+
+    .person-name {
+      font-family: var(--font-hi);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--maroon);
+      margin-bottom: 0.5rem;
+    }
+
+    .person-details {
+      font-size: 1rem;
+      line-height: 2;
+      color: #5a2a2a;
+    }
+
+    .sang-divider {
+      font-family: var(--font-hi);
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .sang-divider svg {
+      width: 60px;
+      height: auto;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 1rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      top: 0;
+      background: linear-gradient(to bottom, transparent, var(--gold), var(--gold), transparent);
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 0;
+      width: 50%;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      margin-left: 50%;
+    }
+
+    .timeline-card {
+      background: linear-gradient(135deg, rgba(253, 246, 236, 0.95), rgba(255, 248, 240, 0.95));
+      border: 2px solid rgba(201, 147, 58, 0.4);
+      border-radius: 16px;
+      padding: 1.5rem;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(107, 26, 26, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(201, 147, 58, 0.2);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      right: -9px;
+      top: 2rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--ivory);
+      box-shadow: 0 0 10px rgba(201, 147, 58, 0.5);
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -9px;
+      right: auto;
+    }
+
+    .event-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-name {
+      font-family: var(--font-hi);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--maroon);
+    }
+
+    .event-name-en {
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .event-date {
+      font-size: 0.95rem;
+      color: #7a3a3a;
+      margin-top: 0.5rem;
+    }
+
+    .event-tithi {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* Barat card */
+    .barat-card {
+      background: linear-gradient(135deg, var(--maroon), var(--maroon-deep));
+      color: var(--ivory);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 2rem auto;
+      text-align: center;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 30px rgba(201, 147, 58, 0.2);
+    }
+
+    .barat-card h3 {
+      font-family: var(--font-hi);
+      font-size: 1.5rem;
+      color: var(--gold-bright);
+      margin-bottom: 1rem;
+    }
+
+    .barat-card p {
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    /* Sender */
+    .sender-section {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(107, 26, 26, 0.03);
+      border-radius: 16px;
+      border: 1px solid rgba(201, 147, 58, 0.2);
+    }
+
+    .sender-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--maroon);
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--maroon);
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      margin: 0.3rem;
+      transition: all 0.3s;
+    }
+
+    .phone-link:hover {
+      background: var(--gold);
+      color: white;
+    }
+
+    /* Family columns */
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .family-card {
+      background: rgba(253, 246, 236, 0.8);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid rgba(201, 147, 58, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .family-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .family-card h4 {
+      font-family: var(--font-hi);
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(201, 147, 58, 0.3);
+    }
+
+    .family-card p {
+      font-size: 0.95rem;
+      color: #5a2a2a;
+      line-height: 1.9;
+    }
+
+    /* Children section */
+    .children-section {
+      background: linear-gradient(135deg, #FFF5E8, #FFECD2);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      border: 2px dashed var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .children-section::before {
+      content: '🪔 🎉 🪔';
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5rem;
+    }
+
+    .children-verse {
+      font-family: var(--font-hi);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--maroon);
+      line-height: 2.2;
+      margin: 1.5rem 0;
+    }
+
+    .children-names {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    /* Closing */
+    .closing-section {
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      padding: 3rem 1.5rem;
+      text-align: center;
+      color: white;
+    }
+
+    .closing-verse {
+      font-family: var(--font-hi);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 2.5;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .closing-family {
+      font-family: var(--font-hi);
+      font-size: 2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* Audio control */
+    .audio-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--maroon);
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(107, 26, 26, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive mobile timeline */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        padding-left: 50px;
+      }
+
+      .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+      }
+
+      .ornate-border {
+        padding: 1.5rem;
+      }
+
+      .family-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .countdown {
+        gap: 0.8rem;
+      }
+
+      .countdown-item {
+        min-width: 70px;
+        padding: 0.8rem 1rem;
+      }
+
+      .countdown-num {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Floating Petals Container -->
+  <div class="petal-container" id="petalContainer"></div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <img src="ganesha.png" alt="Lord Ganesha Blessing" class="hero-ganesha">
+    <div class="shloka reveal">
+      ॐ वक्रतुण्ड महाकाय, सूर्य कोटि समप्रभः।<br>
+      निर्विघ्नं कुरुमे देव, सर्व कार्येषु सर्वदा।।
+    </div>
+    <div class="hero-title gold-shimmer reveal">शुभविवाह</div>
+    <div class="hero-subtitle reveal">— Auspicious Wedding —</div>
+    <div class="lotus-divider" style="margin-top:2rem;">🪷</div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="countdown-label">शुभ विवाह तक शेष समय — Countdown to the Wedding</div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><span
+          class="countdown-unit">Days</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-hours">--</span><span
+          class="countdown-unit">Hours</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-mins">--</span><span
+          class="countdown-unit">Minutes</span></div>
+      <div class="countdown-item"><span class="countdown-num" id="cd-secs">--</span><span
+          class="countdown-unit">Seconds</span></div>
+    </div>
+  </section>
+
+  <!-- COUPLE SECTION -->
+  <section class="section couple-section" id="couple">
+    <div class="monogram gold-shimmer reveal">R ❤ K</div>
+    <div class="person-card ornate-border reveal-left">
+      <div class="person-name">चि. राकेश कुमार (S.M.)</div>
+      <div class="person-details">
+        Son of <strong>Smt. Shanti Devi</strong> & <strong>Shri Hareti Lal Bairwa (व्याख्याता)</strong><br>
+        Grandson of Late Smt. Phoolbai & Late Shri Rampal Ji Bairwa<br>
+        निवासी– <strong>बगलाई</strong>, तह. वजीरपुर, सवाई माधोपुर (राज.)
+      </div>
+    </div>
+    <div class="sang-divider reveal">
+      <svg viewBox="0 0 60 30" fill="none">
+        <path d="M5 25 C15 0, 30 0, 30 15 C30 0, 45 0, 55 25" stroke="#C9933A" stroke-width="2" fill="none" />
+        <circle cx="30" cy="15" r="4" fill="#C9933A" />
+      </svg>
+      संग
+      <svg viewBox="0 0 60 30" fill="none">
+        <path d="M5 25 C15 0, 30 0, 30 15 C30 0, 45 0, 55 25" stroke="#C9933A" stroke-width="2" fill="none" />
+        <circle cx="30" cy="15" r="4" fill="#C9933A" />
+      </svg>
+    </div>
+    <div class="person-card ornate-border reveal-right">
+      <div class="person-name">सौ. कां. कोमल</div>
+      <div class="person-details">
+        Daughter of <strong>Smt. Kamlesh Devi</strong> & <strong>Shri Murarilal Ji Bairwa</strong><br>
+        निवासी– <strong>जगदीश धाम कैमरी</strong>, तह. नादौती, जिला करौली
+      </div>
+    </div>
+  </section>
+
+  <div class="lotus-divider">🪷</div>
+
+  <!-- EVENTS TIMELINE -->
+  <section class="section" id="events">
+    <div class="section-title reveal">॥ वैवाहिक कार्यक्रम ॥<br><span
+        style="font-family:var(--font-en);font-size:0.9rem;letter-spacing:3px;color:var(--gold)">WEDDING PROGRAM</span>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="event-icon">🪔</div>
+          <div class="event-name">शुभ लग्न-टीका</div>
+          <div class="event-name-en">Tilak Ceremony</div>
+          <div class="event-date">📅 1 मई 2026 — शुक्रवार (Friday)</div>
+          <div class="event-tithi">वैशाख सुदी 15</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="event-icon">⛺</div>
+          <div class="event-name">मण्डप व भात</div>
+          <div class="event-name-en">Mandap & Bhat</div>
+          <div class="event-date">📅 1 मई 2026 — शुक्रवार (Friday)</div>
+          <div class="event-tithi">वैशाख सुदी 15</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="event-icon">🫗</div>
+          <div class="event-name">तेल</div>
+          <div class="event-name-en">Tel Ceremony</div>
+          <div class="event-date">📅 3 मई 2026 — रविवार (Sunday)</div>
+          <div class="event-tithi">प्र. ज्येष्ठ बुदी 2</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal-right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card" style="border-color:var(--gold);box-shadow:0 0 20px rgba(201,147,58,0.3);">
+          <div class="event-icon">💍</div>
+          <div class="event-name" style="font-size:1.4rem;">पाणिग्रहण संस्कार</div>
+          <div class="event-name-en">Wedding Ceremony</div>
+          <div class="event-date">📅 5 मई 2026 — मंगलवार (Tuesday)</div>
+          <div class="event-tithi">प्र. ज्येष्ठ बुदी 4</div>
+        </div>
+      </div>
+      <div class="timeline-item reveal-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="event-icon">🏠</div>
+          <div class="event-name">नववधु आगमन</div>
+          <div class="event-name-en">Bride's Arrival</div>
+          <div class="event-date">📅 6 मई 2026 — बुधवार (Wednesday)</div>
+          <div class="event-tithi">प्र. ज्येष्ठ बुदी 4</div>
+        </div>
+      </div>
+    </div>
+    <!-- Barat Card -->
+    <div class="barat-card reveal">
+      <h3>🐴 बारात प्रस्थान — Barat Departure</h3>
+      <p>
+        बारात दिनांक <strong style="color:var(--gold-bright);font-size:1.2rem;">5 मई 2026, मंगलवार</strong> को सायं
+        <strong style="color:var(--gold-bright);font-size:1.3rem;">4 बजे</strong><br>
+        निज निवास, <strong>बगलाई</strong> से <strong>जगदीश धाम, कैमरी</strong> के लिए प्रस्थान करेगी।<br>
+        <span style="font-family:var(--font-en);font-size:0.85rem;opacity:0.8;letter-spacing:1px;">(The wedding
+          procession will depart from Baglai to Jagdish Dham, Kaimri at 4 PM)</span>
+      </p>
+    </div>
+  </section>
+
+  <div class="lotus-divider">🪷</div>
+
+
+
+  <div class="lotus-divider">🪷</div>
+
+  <!-- FAMILY MEMBERS -->
+  <section class="section" id="family">
+    <div class="section-title reveal">परिवार के सदस्य<br><span
+        style="font-family:var(--font-en);font-size:0.85rem;letter-spacing:3px;color:var(--gold)">FAMILY MEMBERS</span>
+    </div>
+    <div class="family-grid">
+      <div class="family-card reveal">
+        <h4>विनीत (Humble Request)</h4>
+        <p>छुट्टन, भरोसी, बृजमोहन</p>
+      </div>
+      <div class="family-card reveal">
+        <h4>निनिहाल पक्ष (Maternal Family)</h4>
+        <p>सुगरया जी–लाडबाई, सोदान जी–सरवती, रामस्वरूप जी (CI)–रजनी, रमेश जी–अंगूरी, मदन जी–निर्मला, जयकिशन जी
+          (अध्या.)–लाली, महेश–ममता, मनोज–रेखा, राजू–पूजा, पप्पी–पूजा, हरीश (अध्या.)–रचना</p>
+      </div>
+      <div class="family-card reveal">
+        <h4>विशेष आग्रह (Special Request)</h4>
+        <p>छुट्टन–परखो देवी, बृजमोहन–इन्दिरा देवी, दिनेश (CHO)–लाली, मुनेश–सिरता, मुकेश–पूजा, सुनील (Ph.D.), महेन्द्र
+        </p>
+      </div>
+      <div class="family-card reveal">
+        <h4>स्वागतकर्ता (Welcomers)</h4>
+        <p>मोहरबाई–भरतलाल जी, अमरबाई–प्रेमचन्द जी, पपीता–रोहिताश जी, रेखा–संजय जी, पूनम–राजेन्द्र जी, सुनीता–बत्तीलाल जी
+        </p>
+      </div>
+      <div class="family-card reveal">
+        <h4>दर्शनाभिलाषी (Well Wishers)</h4>
+        <p>फतोली, बाबूलाल, घनश्याम, लोहड्सा, मानसिंह, गोपाल, श्यामगोपाल, शिवराम, हरिमोहन, पंखी, गोलू, अमरसिंह एवं समस्त
+          मेहरा परिवार</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="lotus-divider">🪷</div>
+
+  <!-- CHILDREN SECTION -->
+  <section class="section" id="children">
+    <div class="section-title reveal">बाल मनुहार<br><span
+        style="font-family:var(--font-en);font-size:0.85rem;letter-spacing:3px;color:var(--gold)">CHILDREN'S
+        INVITATION</span></div>
+    <div class="children-section reveal">
+      <div class="children-verse">
+        करके मीठा सा बहाना, घर पर ही मत रुक जाना,<br>
+        फोन करके मत बहलाना,<br>
+        हमारे चाचाजी की शादी में जरूर से जरूर आना।
+      </div>
+      <div class="children-names">— देवांशु, मानव, मोदी, तन्नू, हिमांशी, मानशी, कान्हा —</div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <!-- SENDER SECTION -->
+  <section class="section" id="sender">
+    <div class="section-title reveal">प्रेषक<br><span
+        style="font-family:var(--font-en);font-size:0.85rem;letter-spacing:3px;color:var(--gold)">FROM THE FAMILY
+        OF</span></div>
+    <div class="sender-section ornate-border reveal">
+      <div class="sender-name">हरेती लाल (व्याख्याता)</div>
+      <div class="sender-name" style="font-size:1.2rem;">छुट्टन लाल, बृजमोहन</div>
+      <p style="margin:0.8rem 0;">निवासी– बगलाई, तह. वजीरपुर<br>जिला– सवाई माधोपुर (राज.)</p>
+      <div style="margin-top:1rem;">
+        <a href="tel:8696406088" class="phone-link">📞 8696406088</a>
+        <a href="tel:8079012646" class="phone-link">📞 8079012646</a>
+      </div>
+    </div>
+  </section>
+  <!-- Audio Button -->
+  <button class="audio-btn" id="audioBtn" title="Toggle Music">🔇</button>
+
+  <script>
+    // Countdown to 5 May 2026
+    const weddingDate = new Date('2026-05-05T16:00:00+05:30').getTime();
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = weddingDate - now;
+      if (diff <= 0) { document.getElementById('countdown').innerHTML = '<p style="color:var(--gold-bright);font-size:1.5rem;">🎊 शुभ विवाह का दिन आ गया! 🎊</p>'; return; }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = d;
+      document.getElementById('cd-hours').textContent = h;
+      document.getElementById('cd-mins').textContent = m;
+      document.getElementById('cd-secs').textContent = s;
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+
+    // Floating petals
+    const petals = ['🌸', '🪷', '🌺', '🪔', '🌼'];
+    const container = document.getElementById('petalContainer');
+    function createPetal() {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = petals[Math.floor(Math.random() * petals.length)];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = 6 + Math.random() * 8 + 's';
+      p.style.fontSize = 0.8 + Math.random() * 1.2 + 'rem';
+      p.style.animationDelay = Math.random() * 2 + 's';
+      container.appendChild(p);
+      setTimeout(() => p.remove(), 16000);
+    }
+    setInterval(createPetal, 800);
+    for (let i = 0; i < 8; i++) setTimeout(createPetal, i * 300);
+
+    // ── Web Audio API: Indian ambient drone ──────────────────────────────
+    const audioBtn = document.getElementById('audioBtn');
+    let audioCtx = null;
+    let droneNodes = [];
+    let audioPlaying = false;
+
+    function buildDrone() {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const master = audioCtx.createGain();
+      master.gain.setValueAtTime(0, audioCtx.currentTime);
+      master.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 1.5);
+      master.connect(audioCtx.destination);
+
+      // Drone frequencies: Sa (220 Hz), Pa (330 Hz), upper Sa (440 Hz), soft Ma (293 Hz)
+      const freqs = [
+        { f: 220, g: 0.5, detune: 0 },   // tonic
+        { f: 330, g: 0.35, detune: 2 },   // fifth
+        { f: 440, g: 0.2, detune: -2 },   // octave
+        { f: 293, g: 0.15, detune: 3 },   // fourth (Ma)
+        { f: 110, g: 0.3, detune: 0 },   // sub-bass tonic
+      ];
+
+      freqs.forEach(({ f, g, detune }) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = f;
+        osc.detune.value = detune;
+        gain.gain.value = g;
+        osc.connect(gain);
+        gain.connect(master);
+        osc.start();
+        droneNodes.push(osc, gain);
+      });
+
+      // Very slow LFO tremolo for warmth
+      const lfo = audioCtx.createOscillator();
+      const lfoGain = audioCtx.createGain();
+      lfo.frequency.value = 0.18;
+      lfoGain.gain.value = 0.04;
+      lfo.connect(lfoGain);
+      lfoGain.connect(master.gain);
+      lfo.start();
+      droneNodes.push(lfo, lfoGain, master);
+    }
+
+    function stopDrone() {
+      if (!audioCtx) return;
+      const master = droneNodes[droneNodes.length - 1];
+      if (master && master.gain) {
+        master.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1);
+      }
+      setTimeout(() => {
+        droneNodes.forEach(n => { try { n.stop && n.stop(); n.disconnect && n.disconnect(); } catch (e) { } });
+        droneNodes = [];
+        audioCtx.close();
+        audioCtx = null;
+      }, 1100);
+    }
+
+    audioBtn.addEventListener('click', () => {
+      audioPlaying = !audioPlaying;
+      if (audioPlaying) {
+        buildDrone();
+        audioBtn.textContent = '🔊';
+        audioBtn.title = 'Mute Music';
+      } else {
+        stopDrone();
+        audioBtn.textContent = '🔇';
+        audioBtn.title = 'Play Music';
+      }
+    });
+  </script>
+</body>
+
+</html>
